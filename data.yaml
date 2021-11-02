@@ -1,0 +1,6 @@
+path: C:/Users/user/Drive/s-hero/Code/Data
+train: train/images
+val: valid/images
+
+nc: 8
+names: ['A_Normal', 'A_Missing_part', 'A_Misordered', 'B_Normal', 'B_Missing_part', 'B_Misordered', 'C_Normal', 'C_Missing_part']
