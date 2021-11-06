@@ -1,2 +1,11 @@
-# Yolov5-GradCAM
-SKKU S-HERO Capstone Design Projects with PCB detection Using Yolov5&amp;Grad-CAM Algorithm
+# YOLOv5-GradCAM
+## SKKU S-HERO Capstone Projects with PCB Defects detection <br> using YOLOv5 & Grad-CAM (Pytorch)
+YOLOv5 Source: https://github.com/ultralytics/yolov5 <br>
+Grad-CAM Source: https://github.com/jacobgil/pytorch-grad-cam
+
+![A2](https://user-images.githubusercontent.com/75653891/139850763-2acd3026-c134-4232-9d33-ec8dcf417463.jpg)
+![A2_cam](https://user-images.githubusercontent.com/75653891/139850783-f602ac92-06a0-4515-9509-5219091252cf.jpg)
+
+![B2](https://user-images.githubusercontent.com/75653891/139851374-150398c0-d5df-459f-b031-367c1da912a4.jpg)
+![B2_cam](https://user-images.githubusercontent.com/75653891/139851381-e9d04366-28d0-4c04-b2dc-986965aec6e0.jpg)
+
