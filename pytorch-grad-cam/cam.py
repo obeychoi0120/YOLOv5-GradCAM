@@ -1,3 +1,6 @@
+import os
+
+os.chdir('./pytorch-grad-cam')
 import argparse
 import cv2
 import numpy as np
