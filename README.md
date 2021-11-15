@@ -23,7 +23,6 @@ Grad-CAM Source: https://github.com/jacobgil/pytorch-grad-cam
 - modify 'model' to the same model as you used before
 - modify 'ckpt' to your own trained weight
 
-# Run Examples
 ![A2](https://user-images.githubusercontent.com/75653891/139850763-2acd3026-c134-4232-9d33-ec8dcf417463.jpg)
 ![KakaoTalk_20211106_204417278](https://user-images.githubusercontent.com/75653891/141776226-da8d69af-ba56-4ee2-9660-97bbc59b2b10.jpg)
 ![A2_cam](https://user-images.githubusercontent.com/75653891/139850783-f602ac92-06a0-4515-9509-5219091252cf.jpg)
