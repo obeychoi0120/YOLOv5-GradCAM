@@ -89,7 +89,7 @@ if __name__ == '__main__':
          "layercam": LayerCAM,
          "fullgrad": FullGrad}
 
-    model = torch.hub.load('ultralytics/yolov5', 'yolov5m', pretrained=True, autoshape=False)
+    model = torch.hub.load('ultralytics/yolov5', 'same_model_as_you_used', pretrained=True, autoshape=False)
     model.model = model.model[:8]
     m = model.model[-1]  # last layer
     ch = m.conv.in_channels if hasattr(m, 'conv') else sum([x.in_channels for x in m.m])  # ch into module
@@ -99,13 +99,11 @@ if __name__ == '__main__':
     for p in model.parameters():
             p.requires_grad = True
 
-    ckpt = torch.load(r'C:\Users\user\Drive\s-hero\Code\yolov5_classifier\runs\train\m_b16_300epoch\weights\best.pt')
+    ckpt = torch.load('your_own_trained_checkpoint(.pt or .pth)')
     weight = ckpt['model'].state_dict()
     model.load_state_dict(weight)
     model.eval()
     model.to('cpu')
-
-    
 
     # Choose the target layer you want to compute the visualization for.
     # Usually this will be the last convolutional layer in the model.
@@ -119,8 +117,9 @@ if __name__ == '__main__':
     # You can also try selecting all layers of a certain type, with e.g:
     # from pytorch_grad_cam.utils.find_layers import find_layer_types_recursive
     # find_layer_types_recursive(model, [torch.nn.ReLU])
-    #target_layers = [model.model[i] for i in range(7)]
-    target_layers = [model.model[6]]
+
+    # yolo_classifier has 7 layer except last 'Classify' layer
+    target_layers = [model.model[6]] 
 
     rgb_img = cv2.imread(args.image_path, 1)[:, :, ::-1]
     rgb_img = np.float32(rgb_img) / 255
@@ -130,10 +129,8 @@ if __name__ == '__main__':
 
     # If None, returns the map for the highest scoring category.
     # Otherwise, targets the requested category.
-    target_category = 7
 
-    #python cam.py --image-path C:/Users/user/Desktop/cams_1/A1.jpg --method gradcam
-
+    target_category = None
 
     # Using the with statement ensures the context is freed, and you can
     # recreate different CAM objects in a loop.
@@ -167,5 +164,5 @@ if __name__ == '__main__':
     gb = deprocess_image(gb)
 
     cv2.imwrite(f'{args.method}_cam.jpg', cam_image)
-    # cv2.imwrite(f'{args.method}_gb.jpg', gb)
-    # cv2.imwrite(f'{args.method}_cam_gb.jpg', cam_gb)
+    cv2.imwrite(f'{args.method}_gb.jpg', gb)
+    cv2.imwrite(f'{args.method}_cam_gb.jpg', cam_gb)
