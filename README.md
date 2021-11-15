@@ -8,20 +8,20 @@ Grad-CAM Source: https://github.com/jacobgil/pytorch-grad-cam
 ## 1. Object Detection using YOLOv5
 - Check 'yolov5' folder, read usage first
 - Structure your files as yolov5's input
-- run train.py for training
+- Run train.py for training
 - and detect.py to save detection results (if you're not interesting at interpreting results, you can skip from here.)
 
 ## 2. Interpret classification results using grad-CAM
 ### 2-1. Train YOLOv5_classifier
 - We're interpreting just classification results, not including detection
-- run train.py for training yolo_classifier: submodel of yolov5 with detecting architecture removed 
-- make sure you use the same structure as yolov5.
+- Run train.py for training yolo_classifier: submodel of yolov5 with detecting architecture removed 
+- Make sure you use the same structure as yolov5.
 - Classification results will be SAME between original yolo and yolo_classifier
 
 ### 2-2. Run cam.py
 - In 'pytorch-grad-cam' folder
-- modify 'model' to the same model as you used before
-- modify 'ckpt' to your own trained weight
+- Modify 'model' to the same model as you used before
+- Modify 'ckpt' to your own trained weight
 
 ![A2](https://user-images.githubusercontent.com/75653891/139850763-2acd3026-c134-4232-9d33-ec8dcf417463.jpg)
 ![KakaoTalk_20211106_204417278](https://user-images.githubusercontent.com/75653891/141776226-da8d69af-ba56-4ee2-9660-97bbc59b2b10.jpg)
