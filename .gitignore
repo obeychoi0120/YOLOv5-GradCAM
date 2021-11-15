@@ -1,7 +1,7 @@
 Data/
 Imagefolder/
 effnet.ipynb
-
+cams/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
